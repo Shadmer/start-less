@@ -1,0 +1,50 @@
+html {
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: @font-size--base;
+}
+
+*, *::after, *::before {
+  box-sizing: inherit;
+}
+
+
+body {
+  min-width: 320px;
+
+  font-family: @font-family--base;
+  font-size: @font-size;
+  line-height: @line-height;
+
+  color: @text-color;
+  background-color: @bg-color;
+}
+
+
+a {
+  color: @link-color;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: @link-hover-color;
+    text-decoration: @link-hover-decoration;
+  }
+}
+
+
+figure {
+  margin: 0;
+}
+
+
+[role="button"] {
+  cursor: pointer;
+}
+
+
+img{
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
