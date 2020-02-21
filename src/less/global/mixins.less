@@ -1,4 +1,3 @@
-// Строительные леса
 .block() {
   background: rgba(70, 18, 18, .5);
   outline: 1px solid #2d0c0c;
@@ -7,42 +6,4 @@
 .elem() {
   background: #ece135;
   outline: 1px solid #373512;
-}
-
-
-// Спрайты
-// Подключение: .sprite(код спрайта);
-
-.spriteWidth(@sprite) {
-  width: extract(@sprite,5);
-}
-.spriteHeight(@sprite) {
-  height: extract(@sprite,6);
-}
-.spritePosition(@sprite) {
-  @sprite-offset-x: extract(@sprite, 3);
-  @sprite-offset-y: extract(@sprite, 4);
-  background-position: @sprite-offset-x @sprite-offset-y;
-}
-.spriteImage(@sprite) {
-  @dir: '../img/';
-  @sprite-image: extract(@sprite, 9);
-  @sprite-image-bare: ~`"@{sprite-image}".slice(1, -1)`;
-  background-image: url("@{dir}@{sprite-image-bare}");
-
-}
-.sprite(@sprite) {
-  .spriteImage(@sprite);
-  .spritePosition(@sprite);
-  .spriteWidth(@sprite);
-  .spriteHeight(@sprite);
-}
-
-.sprites(@sprites, @i: 1) when (@i <= length(@sprites)) {
-  @sprite: extract(@sprites, @i);
-  @sprite-name: e(extract(@sprite, 10));
-  .@{sprite-name} {
-    .sprite(@sprite);
-  }
-  .sprites(@sprites, @i + 1);
 }
